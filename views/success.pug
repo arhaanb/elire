@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	.container
+		#login
+			section
+				.flex-center
+					i.far.fa-check-circle.tick.center
+					.six.columns.successbro
+						h1.semi.center.zero Voting successful
+						h3.center You've voted for #{votedfor}
+
+						if success_msg
+							h5= success_msg
+						if error_msg
+							h5= error_msg
+						if message
+							h5= message

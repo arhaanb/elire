@@ -2,37 +2,42 @@ extends layout
 block content
 	.container.candi
 		.six.columns
-			img(src="/img/inesh.svg" alt="" draggable="false")
+			img(src="/img/hitarth.svg" alt="" draggable="false")
 			h1.center Hitarth Khurana
 			p.center REPUBLICAN
 			p Hitarth has been a Senator from New York, a congressman, a successful business man and a professor. Now he wants to bring America to its greatest heights by tax reform, protecting our 2nd Amendment and making the US army the greatest military in the world. Hitarth is a man who understands America and knows what Americans truly need. Vote for Hitarth. Let the United State Of America stand tall in its glory again.
-			.flex-center
-				a(href='#hitarth' rel='modal:open')
-					button.cool Vote for hitarth
-				#hitarth.modal
-					h5.center Are you sure you want to vote for Hitarth?
-					p.uppercase.center CORE PREZ 2021
-					.container
-						.flexbb
-							a(href='#' rel='modal:close')
-								button.cool no
-							a(href="/success/h")
-								button.cool yes
+			if !currentUser.voted
+				.flex-center
+					a(href='#hitarth' rel='modal:open')
+						button.cool Vote for hitarth
+					#hitarth.modal
+						h5.center Are you sure you want to vote for Hitarth?
+						p.uppercase.center CORE PREZ 2021
+						.container
+							.flexbb
+								a(href='#' rel='modal:close')
+									button.cool no
+								a(href="/success/h")
+									button.cool yes
 
 		.six.columns
 			img(src="/img/inesh.svg" alt="" draggable="false")
 			h1.center Inesh Tickoo
 			p.center DEMOCRAT
 			p Inesh has served as secretary of state, senator from Illinois, lawyer and activist in the past two decades. Free and fair education, lgbtq+ rights, BLM, food security and eradicating homelessness are the issues Inesh has been tremendously vocal about. Especially since most of them lie close to his heart as he was once a common man of America. Inesh believes America will be truly progressive once it has secured the rights of all of its people. Vote for Inesh. Vote for America.
-			.flex-center
-				a(href='#inesh' rel='modal:open')
-					button.cool Vote for inesh
-				#inesh.modal
-					h5.center Are you sure you want to vote for Inesh?
-					p.uppercase.center CORE PREZ 2021
-					.container
-						.flexbb
-							a(href='#' rel='modal:close')
-								button.cool no
-							a(href="/success/i")
-								button.cool yes
+			if !currentUser.voted
+				.flex-center
+					a(href='#inesh' rel='modal:open')
+						button.cool Vote for inesh
+					#inesh.modal
+						h5.center Are you sure you want to vote for Inesh?
+						p.uppercase.center CORE PREZ 2021
+						.container
+							.flexbb
+								a(href='#' rel='modal:close')
+									button.cool no
+								a(href="/success/i")
+									button.cool yes
+
+		if currentUser.voted
+			h1.orange.center Thank you for voting

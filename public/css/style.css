@@ -521,6 +521,16 @@ img {
 	margin-top: 7em;
 }
 
+.tick {
+	color: green;
+	text-align: center;
+	font-size: 3em;
+}
+
+.successbro {
+	margin-top: 1em;
+}
+
 .candi .six.columns h1 {
 	/* margin-top: 4.6em; */
 	margin-bottom: 0.5em;

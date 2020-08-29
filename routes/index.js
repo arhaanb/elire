@@ -14,8 +14,8 @@ const Votes = require('../models/vote');
 //y
 function createVote(bywho, forwho) {
 	var voteData = {
-		bywho: username,
-		forwho: action,
+		bywho: bywho,
+		forwho: forwho,
 		time: new Date(),
 	}
 	Votes.create(voteData, (error, log) => {
@@ -69,18 +69,19 @@ router.get('/success/h', ensureAuthenticated, async (req, res) => {
 	}
 	User.findById(req.user.id, function (err, user) {
 
-		createVote(req.user.username, 'hitarth')
+		createVote(req.user.name, 'hitarth')
 
 		user.voted = 1;
 
 		user.save();
 
-		return res.render('success', { for: 'Hitarth Khurana' })
+		return res.render('success', { votedfor: 'Hitarth Khurana' })
 
 	})
 });
 
 router.get('/success/i', ensureAuthenticated, async (req, res) => {
+	console.log(req.user)
 	if (req.user.voted) {
 		req.flash('success_msg', "You've already voted.");
 		return res.redirect('/dashboard')
@@ -93,7 +94,7 @@ router.get('/success/i', ensureAuthenticated, async (req, res) => {
 
 		user.save();
 
-		return res.render('success', { for: 'Inesh Tickoo' })
+		return res.render('success', { votedfor: 'Inesh Tickoo' })
 
 	})
 });

@@ -14,8 +14,11 @@ block content
 							.card
 								h1.center.semi.teamname Hi, #{currentUser.name.split(' ')[0]}!	
 								.flex-center
-									a(href="/candidates")
-										button.cool.mu Vote now
+									if !currentUser.voted
+										a(href="/candidates")
+											button.cool.mu Vote now
+									if currentUser.voted
+										h4.center.orange Thank you for voting!
 
 							if currentUser.role == 'admin'
 								.card
