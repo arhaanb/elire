@@ -11,8 +11,8 @@ block content
 			.seven.columns
 				form#team(action="/team" method="POST")
 					h4.semi= currentUser.name
-					label.edit(for="") Social Security Number
-					input(type="text" disabled value=currentUser.socialSecurity)
+					//- label.edit(for="") Social Security Number
+					//- input(type="text" disabled value=currentUser.socialSecurity)
 					label(for="") Username
 					input(type="text" value=currentUser.username name="username")
 					label(for="") Email
