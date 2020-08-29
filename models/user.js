@@ -10,6 +10,10 @@ var UserSchema = new Schema({
 	address: String,
 	email: String,
 	username: String,
+	role: {
+		type: String,
+		default: 'user'
+	},
 	accountSet: {
 		type: Number,
 		default: 0

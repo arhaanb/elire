@@ -12,16 +12,21 @@ block content
 					.flex-center
 						.six.columns
 							.card
-								h1.center.semi.teamname Hi, #{currentUser.name.split(' ')[0]}!	
+								h1.center.semi.teamname Hi, #{currentUser.name.split(' ')[0]}	
 								.flex-center
 									if !currentUser.voted
 										a(href="/candidates")
 											button.cool.mu Vote now
 									if currentUser.voted
 										h4.center.orange Thank you for voting!
+									a(href="/edit")
+										button.cool.mu Edit Profile
 
 							if currentUser.role == 'admin'
 								.card
+									h2.semi Admin Panel
 									h5.admin.semi(style="margin-bottom: 1em") Here's to the elite :)
-									a.dash(href="/admin") 
-										button.dash.button-primary.save.cool Admin Panel
+									p Total Votes: #{votes.length}
+									h4 Voter list:
+									each vote in votes
+										p(style="margin: 0") vote by #{vote.bywho}

@@ -30,7 +30,9 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
 	if (!req.user.accountSet) {
 		return res.render('set')
 	} else {
-		return res.render('dashboard')
+		Votes.find().then(votes => {
+			return res.render('dashboard', { votes })
+		})
 	}
 });
 
@@ -109,23 +111,15 @@ router.get('/register', forwardAuthenticated, (req, res) => {
 	return res.render('register')
 });
 
-router.get('/rsvp', forwardAuthenticated, (req, res) => res.render('rsvp'));
+router.get('/edit', ensureAuthenticated, (req, res) => {
+	return res.render('edit')
+});
 
-router.post('/rsvp', (req, res) => {
-	User.findOne({ accessCode: req.body.code }).exec(function (err, team) {
-		if (!team) {
-			req.flash('success_msg', "That access code is invalid.");
-			return res.redirect('/rsvp')
-		} else {
-			console.log(team.name)
-			if (team.confirmed == 1) {
-				return res.render('rsvp', { msg: "That access code has been redeemed." })
-			} else {
-				// console.log(team)
-				return res.render('register', { team: team })
-			}
-		}
-
+router.post('/edit', (req, res) => {
+	User.findById(req.user.id, function (err, user) {
+		user.email = req.body.email
+		user.username = req.body.username
+		user.save()
 	})
 });
 
@@ -139,7 +133,8 @@ router.post('/register', (req, res) => {
 				msg: "This user is not available.",
 				username: req.body.username,
 				name: req.body.name,
-				password: req.body.password
+				password: req.body.password,
+				email: req.body.email
 			});
 		} else {
 

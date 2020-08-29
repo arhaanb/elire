@@ -533,7 +533,19 @@ img {
 
 .candi .six.columns h1 {
 	/* margin-top: 4.6em; */
-	margin-bottom: 0.5em;
+	margin-bottom: 0em;
+}
+
+.candi .six.columns p.uppercase {
+	/* margin-top: 4.6em; */
+	font-size: 1.2em;
+	letter-spacing: 0.1em;
+}
+
+.candi img {
+	/* margin-top: -3.5em; */
+	background-color: rgba(255, 255, 255, 0.11);
+	border-radius: 1em;
 }
 
 /*Info*/
