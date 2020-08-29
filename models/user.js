@@ -14,6 +14,10 @@ var UserSchema = new Schema({
 		type: Number,
 		default: 0
 	},
+	voted: {
+		type: Number,
+		default: 0
+	},
 	role: String
 
 });

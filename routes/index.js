@@ -9,17 +9,16 @@ const hbs = require('nodemailer-express-handlebars');
 // Load models
 const User = require('../models/user');
 // const School = require('../models/schools');
-const Logs = require('../models/logs');
+const Votes = require('../models/vote');
 
 //y
-function createLog(action, category, username) {
-	var logData = {
-		username: username,
-		action: action,
+function createVote(bywho, forwho) {
+	var voteData = {
+		bywho: username,
+		forwho: action,
 		time: new Date(),
-		category: category
 	}
-	Logs.create(logData, (error, log) => {
+	Votes.create(voteData, (error, log) => {
 		if (error) {
 			return next(error);
 		}
@@ -63,22 +62,41 @@ router.post('/set', ensureAuthenticated, async (req, res) =>
 	})
 );
 
-router.get('/success/h', ensureAuthenticated, async (req, res) =>
+router.get('/success/h', ensureAuthenticated, async (req, res) => {
+	if (req.user.voted) {
+		req.flash('success_msg', "You've already voted.");
+		return res.redirect('/dashboard')
+	}
 	User.findById(req.user.id, function (err, user) {
 
-		user.address = req.body.address;
-		user.age = req.body.age;
-		user.socialSecurity = req.body.socialSecurity;
+		createVote(req.user.username, 'hitarth')
 
-		user.accountSet = 1;
+		user.voted = 1;
 
 		user.save();
 
-		req.flash('success_msg', "Account details set.");
-		return res.redirect('/dashboard')
+		return res.render('success', { for: 'Hitarth Khurana' })
 
 	})
-);
+});
+
+router.get('/success/i', ensureAuthenticated, async (req, res) => {
+	if (req.user.voted) {
+		req.flash('success_msg', "You've already voted.");
+		return res.redirect('/dashboard')
+	}
+	User.findById(req.user.id, function (err, user) {
+
+		createVote(req.user.username, 'inesh')
+
+		user.voted = 1;
+
+		user.save();
+
+		return res.render('success', { for: 'Inesh Tickoo' })
+
+	})
+});
 
 // Login Page
 router.get('/login', forwardAuthenticated, (req, res) => {

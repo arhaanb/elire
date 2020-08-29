@@ -1,12 +1,12 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var SchoolSchema = new Schema({
+var VotesSchema = new Schema({
 
-	name: String,
-	accessCode: String,
-	time: Date,
+	forwho: String,
+	bywho: String,
+	time: Date
 
 });
 
-module.exports = mongoose.model('School', SchoolSchema);
+module.exports = mongoose.model('Votes', VotesSchema);
