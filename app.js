@@ -71,7 +71,7 @@ app.use(function (req, res, next) {
 
 // Routes
 app.use('/', require('./routes/index.js'));
-app.use('/admin', require('./routes/admin.js'));
+// app.use('/admin', require('./routes/admin.js'));
 
 //404
 app.use((res, req, next) => {
