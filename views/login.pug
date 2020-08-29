@@ -1,0 +1,53 @@
+extends layout
+
+block content
+	.container
+		#login
+			section
+				.flex-center
+					.six.columns
+						h1.semi.center Login
+						br
+						h5.center Making online, the new normal.
+						form#startup(action='/login' method='POST')
+							label(for='username') Username
+							input.login#username(type='text' name='username' placeholder='Enter Username' required autocomplete="off")
+							label(for='password') Password
+							input.login(type='password' name='password' placeholder='Enter Password' required autocomplete="off")
+							br
+							p.center No Account? 
+								a(href='/register') Register
+							.flex-center
+								button.cool(type='submit') Login
+							if success_msg
+								h5.center= success_msg
+							if error_msg
+								h5.center= error_msg
+							if message
+								h5.center= message
+
+
+				//- .six.columns
+				//- 	p.center
+				//- 		img.loginimg.floating(src="/img/lappy.svg" alt="" draggable="false")
+
+			.u-cf
+
+			section#invalid
+				.six.columns
+					h1.semi Can't login?
+					h5.cap Invalid Credentials
+					p If you’re absolutely sure that you aren’t typing in the wrong credentials, 
+						| reach out to us via our official Facebook page or Discord server.
+					p If you want to speak to us over the phone, DM us on Instagram 
+						| and we’ll arrange a call with an official.
+				.six.columns
+					p.center
+						img.nametag(src="/img/nametag.jpg" alt="" draggable="false")
+				.u-cf
+	script.
+		if (document.getElementById('username')) {
+			document.getElementById('username').addEventListener('input', function () {
+				this.value = this.value.replace(/\s+/g, '').toLowerCase();
+			});
+		}   

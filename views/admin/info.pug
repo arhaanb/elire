@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+	.container
+		h1.semi Team information
+		h5 Select a team to view their participants and other information
+
+		section#teaminfo
+			.flex-center
+				.nine.columns
+					each user in users
+						a(href="/admin/teams/"+user.username)
+							.coolbox
+								h5= user.school
+								p= user.name

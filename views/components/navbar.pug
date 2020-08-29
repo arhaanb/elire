@@ -1,0 +1,18 @@
+nav
+	.container
+		.flexer
+			div
+				a.minet(href="/")
+					img(src="/img/elire.svg", alt="" style="width: 3em")
+				//- a(href="/centres") Centres
+			div.rightlink
+				if !currentUser
+					a(href="/rsvp") Register
+					a(href="/login") Login
+				if currentUser
+					a(href="/candidates") Candidates
+					a(href="/dashboard") Dashboard
+					//- a(href="/team") Team
+					a(href='/logout') Logout
+					//- if currentUser.role=="admin"
+					//- 	a(href="/info") Team Info

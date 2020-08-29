@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+	.container
+		if success_msg
+			h1= success_msg
+		.flex-center
+			.seven.columns
+				form(action="/admin/disqualify" method="post")
+					label.edit(for="") School
+					select(name="school")
+						each user in users
+							option(value=user.username)= user.school
+					.flex-center
+						button.button-primary.save.cool(type="submit") disqualify

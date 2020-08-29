@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+	.container
+		h1.semi Register teams
+		h5 Manual registration portal for X.
+		if success_msg
+			h5= success_msg
+		.flex-center#regss
+			.seven.columns
+				form(action="/admin/school" method="post")
+					label.edit(for="") School Name
+					input(type="text" name="name" required value=name)
+					label.edit(for="") Access Code
+					input(type="text" name="code" required value=accessCode)
+					.flex-center
+						button.button-primary.save.cool(type="submit") Register

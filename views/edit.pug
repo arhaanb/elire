@@ -1,0 +1,150 @@
+extends layout
+block content
+	.container
+		h1.semi Team Details
+		//- h3 Hi, #{currentUser.name}
+		br
+		h5.edit Edit your team here.
+		if success_msg
+		h5.edit= success_msg
+
+		.flex-center
+			.seven.columns
+				form#team(action="/team" method="POST")
+					h4.semi School
+					br
+					label.edit(for="") Name
+					input(type="text" disabled value=currentUser.name)
+					label(for="") Username
+					input(type="text" disabled value=currentUser.username)
+					label(for="") Email
+					input(type="text" disabled value=currentUser.email)
+
+					h4.semi Design
+					br
+					label(for="") Player 1 Name
+					input(type="text" placeholder="Player 1 Name" name="designParticipant1Name" value=currentUser.team.design.p1.name)
+					label(for="") Player 1 Email
+					input(type="text" placeholder="Player 1 Email" name="designParticipant1Email" value=currentUser.team.design.p1.email)
+					label(for="") Player 2 Name
+					input(type="text" placeholder="Player 2 Name" name="designParticipant2Name" value=currentUser.team.design.p2.name)
+					label(for="") Player 2 Email
+					input(type="text" placeholder="Player 2 Email" name="designParticipant2Email" value=currentUser.team.design.p2.email)
+					label(for="") Player 3 Name
+					input(type="text" placeholder="Player 3 Name" name="designParticipant3Name" value=currentUser.team.design.p3.name)
+					label(for="") Player 3 Email
+					input(type="text" placeholder="Player 3 Email" name="designParticipant3Email" value=currentUser.team.design.p3.email)
+
+					h4.semi Pitching
+					br
+					label(for="") Player 1 Name
+					input(type="text" placeholder="Player 1 Name" name="pitchingParticipant1Name" value=currentUser.team.pitching.p1.name)
+					label(for="") Player 1 Email
+					input(type="text" placeholder="Player 1 Email" name="pitchingParticipant1Email" value=currentUser.team.pitching.p1.email)
+					label(for="") Player 2 Name
+					input(type="text" placeholder="Player 2 Name" name="pitchingParticipant2Name" value=currentUser.team.pitching.p2.name)
+					label(for="") Player 2 Email
+					input(type="text" placeholder="Player 2 Email" name="pitchingParticipant2Email" value=currentUser.team.pitching.p2.email)
+					
+					h4.semi Surprise
+					br
+					label(for="") Player 1 Name
+					input(type="text" placeholder="Player 1 Name" name="surpriseParticipant1Name" value=currentUser.team.surprise.p1.name)
+					label(for="") Player 1 Email
+					input(type="text" placeholder="Player 1 Email" name="surpriseParticipant1Email" value=currentUser.team.surprise.p1.email)
+					label(for="") Player 2 Name
+					input(type="text" placeholder="Player 2 Name" name="surpriseParticipant2Name" value=currentUser.team.surprise.p2.name)
+					label(for="") Player 2 Email
+					input(type="text" placeholder="Player 2 Email" name="surpriseParticipant2Email" value=currentUser.team.surprise.p2.email)
+
+					h4.semi Gaming
+					br
+					label(for="") Player 1 Name
+					input(type="text" placeholder="Player 1 Name" name="gamingParticipant1Name" value=currentUser.team.gaming.p1.name)
+					label(for="") Player 1 Email
+					input(type="text" placeholder="Player 1 Email" name="gamingParticipant1Email" value=currentUser.team.gaming.p1.email)
+					label(for="") Player 2 Name
+					input(type="text" placeholder="Player 2 Name" name="gamingParticipant2Name" value=currentUser.team.gaming.p2.name)
+					label(for="") Player 2 Email
+					input(type="text" placeholder="Player 2 Email" name="gamingParticipant2Email" value=currentUser.team.gaming.p2.email)
+
+					h4.semi Quiz
+					br
+					label(for="") Player 1 Name
+					input(type="text" placeholder="Player 1 Name" name="quizParticipant1Name" value=currentUser.team.quiz.p1.name) 
+					label(for="") Player 1 Email
+					input(type="text" placeholder="Player 1 Email" name="quizParticipant1Email" value=currentUser.team.quiz.p1.email) 
+					label(for="") Player 2 Name
+					input(type="text" placeholder="Player 2 Name" name="quizParticipant2Name" value=currentUser.team.quiz.p2.name)
+					label(for="") Player 2 Email
+					input(type="text" placeholder="Player 2 Email" name="quizParticipant2Email" value=currentUser.team.quiz.p2.email)
+
+					h4.semi Crossword
+					br
+					label(for="") Player 1 Name
+					input(type="text" placeholder="Player 1 Name" name="crosswordParticipant1Name" value=currentUser.team.crossword.p1.name)
+					label(for="") Player 1 Email
+					input(type="text" placeholder="Player 1 Email" name="crosswordParticipant1Email" value=currentUser.team.crossword.p1.email)
+					label(for="") Player 2 Name
+					input(type="text" placeholder="Player 2 Name" name="crosswordParticipant2Name" value=currentUser.team.crossword.p2.name)
+					label(for="") Player 2 Email
+					input(type="text" placeholder="Player 2 Email" name="crosswordParticipant2Email" value=currentUser.team.crossword.p2.email)
+
+					h4.semi Group Discussion
+					br
+					label(for="") Player 1 Name
+					input(type="text" placeholder="Player 1 Name" name="gdParticipant1Name" value=currentUser.team.gd.p1.name)
+					label(for="") Player 1 Email
+					input(type="text" placeholder="Player 1 Email" name="gdParticipant1Email" value=currentUser.team.gd.p1.email)
+
+					h4.semi Programming
+					br
+					label(for="") Player 1 Name
+					input(type="text" placeholder="Player 1 Name" name="programmingParticipant1Name" value=currentUser.team.programming.p1.name)
+					label(for="") Player 1 Email
+					input(type="text" placeholder="Player 1 Email" name="programmingParticipant1Email" value=currentUser.team.programming.p1.email)
+					label(for="") Player 2 Name
+					input(type="text" placeholder="Player 2 Name" name="programmingParticipant2Name" value=currentUser.team.programming.p2.name)
+					label(for="") Player 2 Email
+					input(type="text" placeholder="Player 2 Email" name="programmingParticipant2Email" value=currentUser.team.programming.p2.email)
+
+					h4.semi Robotics
+					br
+					label(for="") Player 1 Name
+					input(type="text" placeholder="Player 1 Name" name="roboticsParticipant1Name" value=currentUser.team.robotics.p1.name)
+					label(for="") Player 1 Email
+					input(type="text" placeholder="Player 1 Email" name="roboticsParticipant1Email" value=currentUser.team.robotics.p1.email)
+					label(for="") Player 2 Name
+					input(type="text" placeholder="Player 2 Name" name="roboticsParticipant2Name" value=currentUser.team.robotics.p2.name)
+					label(for="") Player 2 Email
+					input(type="text" placeholder="Player 2 Email" name="roboticsParticipant2Email" value=currentUser.team.robotics.p2.email)
+					
+					h4.semi Photography
+					br
+					label(for="") Player 1 Name
+					input(type="text" placeholder="Player 1 Name" name="photographyParticipant1Name" value=currentUser.team.photography.p1.name)
+					label(for="") Player 1 Email
+					input(type="text" placeholder="Player 1 Email" name="photographyParticipant1Email" value=currentUser.team.photography.p1.email)
+
+					h4.semi Filmmaking
+					br
+					label(for="") Player 1 Name
+					input(type="text" placeholder="Player 1 Name" name="filmmakingParticipant1Name" value=currentUser.team.filmmaking.p1.name)
+					label(for="") Player 1 Email
+					input(type="text" placeholder="Player 1 Email" name="filmmakingParticipant1Email" value=currentUser.team.filmmaking.p1.email)
+					label(for="") Player 2 Name
+					input(type="text" placeholder="Player 2 Name" name="filmmakingParticipant2Name" value=currentUser.team.filmmaking.p2.name)
+					label(for="") Player 2 Email
+					input(type="text" placeholder="Player 2 Email" name="filmmakingParticipant2Email" value=currentUser.team.filmmaking.p2.email)
+					label(for="") Player 3 Name
+					input(type="text" placeholder="Player 3 Name" name="filmmakingParticipant3Name" value=currentUser.team.filmmaking.p3.name)
+					label(for="") Player 3 Email
+					input(type="text" placeholder="Player 3 Email" name="filmmakingParticipant3Email" value=currentUser.team.filmmaking.p3.email)
+					label(for="") Player 4 Name
+					input(type="text" placeholder="Player 4 Name" name="filmmakingParticipant4Name" value=currentUser.team.filmmaking.p4.name)
+					label(for="") Player 4 Email
+					input(type="text" placeholder="Player 4 Email" name="filmmakingParticipant4Email" value=currentUser.team.filmmaking.p4.email)
+
+					br
+					.flex-center
+						button.save(type="submit").save.button-primary.cool Save changes

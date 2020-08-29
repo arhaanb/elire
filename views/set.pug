@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	.container
+		#login
+			section
+				.flex-center
+					.six.columns
+						h1.semi.center Set Up
+						br
+						h5.center Set up your account to get started
+						form#startup(action='/set' method='POST')
+							label(for='username') Social Security Number
+							input.login#username(type='text' name='socialSecurity' placeholder='Social Security Number' required autocomplete="off")
+							label(for='username') Age
+							input.login#username(type='text' name='age' placeholder='Age' required autocomplete="off")
+							label(for='password') Address
+							input.login(type='text' name='address' placeholder='Address' required autocomplete="off")
+							br
+							.flex-center
+								button.cool.save.button-primary(type='submit') Save
+							if success_msg
+								h5= success_msg
+							if error_msg
+								h5= error_msg
+							if message
+								h5= message

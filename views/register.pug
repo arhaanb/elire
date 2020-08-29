@@ -1,0 +1,29 @@
+extends layout
+
+block content
+	.container
+		#login
+			section
+				.flex-center
+					.six.columns
+						h1.semi.center.zero Register
+						br
+						h5.center Get started with your personal school experience at MINET X.
+						form#startup(action='/register' method='POST')
+							label(for='username') Name
+							input.login#username(type='text' name='name' placeholder='Enter Name' required autocomplete="off")
+							label(for='username') Username
+							input.login#username(type='text' name='username' placeholder='Enter Username' required autocomplete="off")
+							label(for='password') Password
+							input.login(type='password' name='password' placeholder='Enter Password' required autocomplete="off")
+							br
+							p.center Already have an account? 
+								a(href='/login') Login
+							.flex-center
+								button.cool.save.button-primary(type='submit') Login
+							if success_msg
+								h5= success_msg
+							if error_msg
+								h5= error_msg
+							if message
+								h5= message

@@ -1,0 +1,24 @@
+extends layout
+block content
+	.container
+		.dash
+			h1.semi.zero Dashboard
+			h5 Your personal dashboard at Elire.
+			if success_msg
+				h5= success_msg
+
+			#dashstuff
+				.row
+					.flex-center
+						.six.columns
+							.card
+								h1.center.semi.teamname Hi, #{currentUser.name.split(' ')[0]}!	
+								.flex-center
+									a(href="/candidates")
+										button.cool.mu Vote now
+
+							if currentUser.role == 'admin'
+								.card
+									h5.admin.semi(style="margin-bottom: 1em") Here's to the elite :)
+									a.dash(href="/admin") 
+										button.dash.button-primary.save.cool Admin Panel

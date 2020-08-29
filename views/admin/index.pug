@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+	.container
+		h1.semi Admin
+		h5 Here's to the elite :)
+
+		#yah.mainadmin
+			.flex-center
+				.six.columns
+					.card
+						h3.semi.center Quick Links
+						a(href="/admin/teams")
+							button.dash.button-primary.save.cool Teams
+						a(href="/admin/register")
+							button.dash.button-primary.save.cool Register
+						a(href="/admin/funds")
+							button.dash.button-primary.save.cool Add funds
+						a(href="/admin/disqualify")
+							button.dash.button-primary.save.cool Disqualify
+
+
+
+		//- section#teaminfo
+		//- 	.flex-center
+		//- 		.nine.columns
+		//- 			each user in users
+		//- 				a(href="/admin/teams/"+user.username)
+		//- 					.coolbox
+		//- 						h5= user.school
+		//- 						p= user.name
