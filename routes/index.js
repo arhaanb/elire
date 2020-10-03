@@ -4,8 +4,6 @@ const { ensureAuthenticated, forwardAuthenticated, ensureAdmin } = require('../c
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const request = require('request');
-var nodemailer = require('nodemailer');
-const hbs = require('nodemailer-express-handlebars');
 // Load models
 const User = require('../models/user');
 // const School = require('../models/schools');
