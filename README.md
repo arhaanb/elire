@@ -1,13 +1,11 @@
-# MINET X 2020
+# 🗳 Elire
 
-X is an exclusive invite-only event, witnessing participation from all over India. Invites are extended to a select number of the very best schools, based on significant achievements in the previous years. This, is it's official website.
+A new way to vote during the pandemic. Built for [CORE 2020](https://coreisus.co). The prompt can be found [here](https://docs.google.com/document/d/1PmqY2aFI7BcuzOZFWkOwQ_uGY7ggyULpVJnQnDj5EP4/edit). We received the 2nd position at this Creative Event.
 
-### Make at X
+### The team
 
-Humans innovate.
-
-When faced with the seemingly insurmountable, we resort to our inherent ingenuity to deal with it. We make things. Things of utility. Things of majesty. Things that make you stop and think how you didn’t think of a solution so elegant to a problem so daunting.
-
-Every once in a while, one of these things also happens to be a thing of beauty. A paragon of design.
-
-At X, we celebrate just that. And try our best to Make.
+- [Arhaan Bahadur](https://arhaanb.co)
+- Siddhayak Goyal
+- [Aditya Pramar](https://aditya-pramar.herokuapp.com)
+- Riva Sarkar
+- Akshat Jain
